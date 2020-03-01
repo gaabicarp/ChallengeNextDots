@@ -5,6 +5,7 @@ CocktailFinder App made in React Native v0.61.5
 - Clone this repo `git clone https://github.com/gaabicarp/ChallengeNextDots.git`
 - `cd ChallengeNextDots`
 - run `npm install`
+- run `cd ios` && `pod install` && `cd ..`
 
 ## launch Android
 `npx react-native run-android` or from Android Studio
