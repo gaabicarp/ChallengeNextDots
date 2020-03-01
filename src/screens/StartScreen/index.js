@@ -1,2 +1,2 @@
-import StartScreen from './StartScreen'
-export default StartScreen
+import StartScreen from './StartScreen';
+export default StartScreen;

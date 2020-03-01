@@ -1,20 +1,20 @@
-import {createAppContainer} from 'react-navigation'
-import {createStackNavigator} from 'react-navigation-stack'
-import {StartScreen, ListDrinkScreen} from "../screens"
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
+import {StartScreen, ListDrinkScreen} from '../screens';
 
-const noHeader={headerShown: false}
+const noHeader = {headerShown: false};
 
-const stack ={
-    Start:{
-        screen: StartScreen,
-        navigationOptions: noHeader
-    },
-    ListDrinks:{
-        screen: ListDrinkScreen,
-        navigationOptions: noHeader
-    }
-}
+const stack = {
+  Start: {
+    screen: StartScreen,
+    navigationOptions: noHeader,
+  },
+  ListDrinks: {
+    screen: ListDrinkScreen,
+    navigationOptions: noHeader,
+  },
+};
 
-const MainStack = createStackNavigator(stack)
+const MainStack = createStackNavigator(stack);
 
-export default createAppContainer(MainStack)
+export default createAppContainer(MainStack);

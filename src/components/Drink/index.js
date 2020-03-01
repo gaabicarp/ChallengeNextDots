@@ -1,3 +1,3 @@
-import Drink from './Drink'
+import Drink from './Drink';
 
-export default Drink
+export default Drink;

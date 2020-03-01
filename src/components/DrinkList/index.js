@@ -1,2 +1,2 @@
-import DrinkList from './DrinkList'
-export default DrinkList
+import DrinkList from './DrinkList';
+export default DrinkList;

@@ -1,2 +1,2 @@
-import ListDrinkScreen from './ListDrinkScreen'
-export default ListDrinkScreen
+import ListDrinkScreen from './ListDrinkScreen';
+export default ListDrinkScreen;
