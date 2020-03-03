@@ -18,12 +18,13 @@ export default class ArrowBack extends Component {
   };
 
   render() {
+    const {onPress} = this.props
     let TouchableComp = TouchableOpacity;
     if (Platform.OS === 'android' && Platform.Version >= 21) {
       TouchableComp = TouchableNativeFeedback;
     }
     return (
-      <TouchableComp onPress={this.props.onPress}>
+      <TouchableComp onPress={onPress}>
         <View>
           <Icon name="arrow-back" size={20} color="black" />
         </View>

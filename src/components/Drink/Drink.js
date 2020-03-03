@@ -10,13 +10,14 @@ export default class Drink extends Component {
   };
 
   render() {
+    const {imageUrl, name} = this.props;
     return (
       <Card>
         <ImgContainer>
-          <DrinkImg source={{uri: this.props.imageUrl}} />
+          <DrinkImg source={{uri: imageUrl}} />
         </ImgContainer>
         <TextContainer>
-          <Text>{this.props.name}</Text>
+          <Text>{name}</Text>
         </TextContainer>
       </Card>
     );

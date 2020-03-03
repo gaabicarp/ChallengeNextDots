@@ -23,6 +23,7 @@ export default class Searcher extends Component {
   };
 
   render() {
+    const {funOnFocus, funChangeText, inputValue, focus} = this.props;
     return (
       <SearcherContainer>
         <IconContainer>
@@ -32,10 +33,10 @@ export default class Searcher extends Component {
           <Input
             placeholder="Search your favourite cocktail"
             placeholderTextColor="grey"
-            onFocus={this.props.funOnFocus}
-            onChangeText={this.props.funChangeText}
-            value={this.props.inputValue}
-            autoFocus={this.props.focus}
+            onFocus={funOnFocus}
+            onChangeText={funChangeText}
+            value={inputValue}
+            autoFocus={focus}
           />
         </InputContainer>
       </SearcherContainer>

@@ -1,6 +1,6 @@
 import {SafeAreaView} from 'react-native';
 import styled from 'styled-components';
 
-export const _Container = styled(SafeAreaView)({
+export const viewContainer = styled(SafeAreaView)({
   flex: 1,
 });
