@@ -25,8 +25,6 @@ const ListDrinkScreen = props => {
 
   let drinklist = useSelector(state => state.drinks.drinks);
   let error = useSelector(state => state.drinks.error);
-  console.log(error)
-
 
   const setDrinks = async () => {
     if (drinkName.length >= 3) {

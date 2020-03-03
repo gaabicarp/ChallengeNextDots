@@ -2,7 +2,7 @@ import {SET_DRINKS, CLEAR_DRINKS, SET_ERROR} from '../actions/drinks';
 
 const initialState = {
   drinks: [],
-  error:''
+  error: '',
 };
 
 export default (state = initialState, action) => {
@@ -14,9 +14,9 @@ export default (state = initialState, action) => {
     case CLEAR_DRINKS:
       return initialState;
     case SET_ERROR:
-      return{
-        error: action.payload
-      }
+      return {
+        error: action.payload,
+      };
     default:
       return state;
   }

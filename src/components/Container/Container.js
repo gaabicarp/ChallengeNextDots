@@ -9,8 +9,7 @@ export default class Container extends Component {
   };
 
   render() {
-    return (
-      <viewContainer style={this.props.style}>{this.props.children}</viewContainer>
-    );
+    const {style, children} = this.props;
+    return <viewContainer style={style}> {children} </viewContainer>;
   }
 }
