@@ -1,18 +1,15 @@
 import Drink from '../../models/drinks';
+import ServiceApp from '../../provider/APIrequest'
 
 export const SET_DRINKS = 'SET_DRINKS';
 export const CLEAR_DRINKS = 'CLEAR_DRINKS';
+export const SET_ERROR = 'SET_ERROR'
 
 export const fetchDrinks = drinkName => {
   return async dispatch => {
     try {
-      const response = await fetch(
-        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkName}`,
-      );
-      if (!response.ok) {
-        throw new Error('Something went wrong!');
-      }
-
+      const response = await ServiceApp.fetchAPI(drinkName)
+      console.log(response)
       let resData = await response.json();
       resData = resData.drinks;
 
@@ -20,22 +17,20 @@ export const fetchDrinks = drinkName => {
         throw new Error('That drink was not found');
       }
 
-      const loadedDrinks = [];
+      const loadedDrinks = resData.map(item =>{
+          const drink = new Drink(
+            item.idDrink,
+            item.strDrinkThumb,
+            item.strDrink,
+          );
+          return drink;
+        }
+      )
 
-      // eslint-disable-next-line no-unused-vars
-      for (const key in resData) {
-        loadedDrinks.push(
-          new Drink(
-            resData[key].idDrink,
-            resData[key].strDrinkThumb,
-            resData[key].strDrink,
-          ),
-        );
-      }
-
-      dispatch({type: SET_DRINKS, drinks: loadedDrinks});
+      dispatch({type: SET_DRINKS, payload: loadedDrinks});
     } catch (err) {
-      throw err;
+      console.log("es este", err)
+      dispatch({type: SET_ERROR, payload: err.message});
     }
   };
 };

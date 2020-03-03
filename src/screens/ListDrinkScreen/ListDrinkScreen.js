@@ -17,22 +17,23 @@ import Colors from '../../constant/Color';
 import * as drinksActions from '../../store/actions/drinks';
 
 const ListDrinkScreen = props => {
-  const [error, setError] = useState('');
+  // const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [drinkName, setDrinkName] = useState('');
 
   const dispatch = useDispatch();
 
   let drinklist = useSelector(state => state.drinks.drinks);
+  let error = useSelector(state => state.drinks.error);
+  console.log(error)
+
 
   const setDrinks = async () => {
-    setError('');
     if (drinkName.length >= 3) {
       setIsLoading(true);
       try {
         await dispatch(drinksActions.fetchDrinks(drinkName));
       } catch (err) {
-        setError(err.message);
         dispatch(drinksActions.clearDrinks());
       }
       setIsLoading(false);
