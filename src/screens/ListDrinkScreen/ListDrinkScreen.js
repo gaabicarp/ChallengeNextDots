@@ -78,7 +78,7 @@ const ListDrinkScreen = props => {
       </HeaderContainer>
       <Background colors={[Colors.Primary, Colors.Accent]}>
         <ContainerActivity>
-          {error ? <TextError>{error}</TextError> : null}
+          {error && <TextError>{error}</TextError>}
           {isLoading ? (
             <ActivityIndicator size="large" color="white" />
           ) : (
