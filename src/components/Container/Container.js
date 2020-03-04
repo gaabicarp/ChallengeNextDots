@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {viewContainer} from './Styles';
+import {ViewContainer} from './Styles';
 import PropTypes from 'prop-types';
 
 export default class Container extends Component {
@@ -10,6 +10,6 @@ export default class Container extends Component {
 
   render() {
     const {style, children} = this.props;
-    return <viewContainer style={style}> {children} </viewContainer>;
+    return <ViewContainer style={style}>{children}</ViewContainer>;
   }
 }

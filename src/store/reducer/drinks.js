@@ -2,7 +2,7 @@ import {SET_DRINKS, CLEAR_DRINKS, SET_ERROR} from '../actions/drinks';
 
 const initialState = {
   drinks: [],
-  error: '',
+  error: null,
 };
 
 export default (state = initialState, action) => {

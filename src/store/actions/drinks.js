@@ -27,7 +27,9 @@ export const fetchDrinks = drinkName => {
 
       dispatch({type: SET_DRINKS, payload: loadedDrinks});
     } catch (err) {
-      dispatch({type: SET_ERROR, payload: err.message});
+      if (err) {
+        dispatch({type: SET_ERROR, payload: err.message});
+      }
     }
   };
 };
